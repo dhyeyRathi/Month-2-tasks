@@ -23,7 +23,7 @@ const Card = ({
           src={image}
           className="w-full h-full rounded-t-lg object-cover group-hover:scale-110 overflow-hidden transition-all duration-300"
           alt={`${title}'s image`}
-        />
+        loading='lazy'/>
       </div>
       
       <div

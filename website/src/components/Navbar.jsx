@@ -11,7 +11,7 @@ const Navbar = ({className}) => {
 
   return (<>
     <header className={`bg-primary/40 backdrop-blur-md w-full h-30 flex justify-between right-0 left-0 top-0  md:px-12 lg:px-18 fixed z-3 items-center py-5 ${className}`}>
-      <img src={logo} className="h-full scale-50 sm:scale-80 md:scale-100" />
+      <img src={logo} className="h-full scale-50 sm:scale-80 md:scale-100" alt="levi's logo" />
 
       <ul className="h-full w-auto hidden sm:flex justify-between items-center text-secondary font-bold text-2xl gap-2 md:gap-4 lg:gap-10">
         <li className="relative group">
@@ -89,6 +89,14 @@ const Navbar = ({className}) => {
             Home
           </NavLink>
           <NavLink
+            to="/myprofile"
+            className={`w-full px-4 py-2 text-2xl font-bold text-white border-b-1 border-t-1 border-white opacity-0 bottom-[20%] transition-all duration-400 ${hamburgerActive ? "opacity-100 bottom-[10%]" : ""}`}
+            onClick={() => setHamburgerActive(!hamburgerActive)}
+          >
+            Profile
+          </NavLink>
+
+          <NavLink
             to="/About"
             className={`w-full px-4 py-2 text-2xl font-bold text-white border-b-1 border-t-1 border-white opacity-0 bottom-[20%] transition-all duration-400 ${hamburgerActive ? "opacity-100 bottom-[100%]" : ""}`}
             onClick={() => setHamburgerActive(!hamburgerActive)}
@@ -103,13 +111,7 @@ const Navbar = ({className}) => {
             Contact
           </NavLink>
 
-          <NavLink
-            to="/myprofile"
-            className={`w-full px-4 py-2 text-2xl font-bold text-white border-b-1 border-t-1 border-white opacity-0 bottom-[20%] transition-all duration-400 ${hamburgerActive ? "opacity-100 bottom-[10%]" : ""}`}
-            onClick={() => setHamburgerActive(!hamburgerActive)}
-          >
-            Profile
-          </NavLink>
+          
 
           <NavLink
             to="/mysetting"
