@@ -11,7 +11,7 @@ const Dropdown = ({ title, children, className = "" }) => {
         className={` w-full items-center p-4  hover:cursor-pointer hover:bg-secondary/80 hover:text-primary font-bold rounded-full relative ${open ? "bg-secondary/80 text-primary " : "text-white "}`}
         
         onMouseEnter={() => setOpen(true)}
-        onClick={()=>setOpen(true)}
+        onClick={()=>setOpen(!open)}
         
         
       >

@@ -10,10 +10,10 @@ const Navbar = ({className}) => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
 
   return (<>
-    <header className={`bg-primary/40 backdrop-blur-md w-full h-30 flex justify-between px-1 pr-8 sm:px-5 md:px-12 lg:px-18 fixed z-3 items-center py-5 ${className}`}>
-      <img src={logo} className="h-full scale-80 md:scale-100" />
+    <header className={`bg-primary/40 backdrop-blur-md w-full h-30 flex justify-between right-0 left-0 top-0  md:px-12 lg:px-18 fixed z-3 items-center py-5 ${className}`}>
+      <img src={logo} className="h-full scale-50 sm:scale-80 md:scale-100" />
 
-      <ul className="h-full w-auto hidden sm:flex justify-between items-center text-secondary font-bold text-2xl gap-4 md:gap-10 ">
+      <ul className="h-full w-auto hidden sm:flex justify-between items-center text-secondary font-bold text-2xl gap-2 md:gap-4 lg:gap-10">
         <li className="relative group">
           <NavLink to="/">Home</NavLink>
           <hr className="h-0.5 left-0 absolute bg-secondary w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
@@ -48,8 +48,11 @@ const Navbar = ({className}) => {
 
       {/* for smaller screens */}
       <div aria-label="menu-for-mobile-screens" className=" sm:hidden flex gap-8 items-center text-secondary">
-        <ShoppingCart size={35} strokeWidth={3} absoluteStrokeWidth className="scale-90"/>
-        <CircleUser size={35} strokeWidth={3} absoluteStrokeWidth className="scale-90" />
+        <NavLink to='/cart'><ShoppingCart size={35} strokeWidth={3} absoluteStrokeWidth 
+        
+        className="scale-90"/>
+        </NavLink>
+        
 
 
 
@@ -57,7 +60,7 @@ const Navbar = ({className}) => {
 
         <div
           aria-label="hamburger-menu"
-          className={`flex flex-col group transition-all duration-200 scale-90 ${hamburgerActive ? "" : "gap-2"}`}
+          className={`flex flex-col group transition-all duration-200 scale-80 pr-8 ${hamburgerActive ? "" : "gap-2"}`}
           onClick={() => setHamburgerActive(!hamburgerActive)}
         >
           <hr
@@ -71,6 +74,9 @@ const Navbar = ({className}) => {
       </div>
      
     </header>
+
+
+    
      <div
           className={`fixed w-screen h-screen bg-primary/40 backdrop-blur-lg z-3  flex flex-col bottom-0 left-0 right-0 top-30 transition-all duration-200 border-l-1 border-t-1 border-white ${hamburgerActive ? "" : "left-[100%]"}`}
           aria-label="sidebar"
@@ -96,6 +102,24 @@ const Navbar = ({className}) => {
           >
             Contact
           </NavLink>
+
+          <NavLink
+            to="/myprofile"
+            className={`w-full px-4 py-2 text-2xl font-bold text-white border-b-1 border-t-1 border-white opacity-0 bottom-[20%] transition-all duration-400 ${hamburgerActive ? "opacity-100 bottom-[10%]" : ""}`}
+            onClick={() => setHamburgerActive(!hamburgerActive)}
+          >
+            Profile
+          </NavLink>
+
+          <NavLink
+            to="/mysetting"
+            className={`w-full px-4 py-2 text-2xl font-bold text-white border-b-1 border-t-1 border-white opacity-0 bottom-[20%] transition-all duration-400 ${hamburgerActive ? "opacity-100 bottom-[10%]" : ""}`}
+            onClick={() => setHamburgerActive(!hamburgerActive)}
+          >
+            Settings
+          </NavLink>
+
+          
           
         </div>
       

@@ -90,7 +90,7 @@ const Home = () => {
 
           <div
             aria-label="card-container"
-            className=" w-full px-5 py-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8"
+            className=" w-full px-5 py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
           >
             {clothes.map((item, index) => (
               <motion.div
