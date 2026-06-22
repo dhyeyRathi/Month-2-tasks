@@ -45,4 +45,8 @@
     transform: translateY(0); 
   }
 }
-    
+
+/* a.active + hr{
+  transform:scaleX(1);
+}
+     */
