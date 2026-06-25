@@ -43,9 +43,9 @@ const Journal = () => {
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div style={{ opacity: 1, transform: "none" }}>
-            <a
+            <Link
               className="group grid lg:grid-cols-2 gap-10 border-t border-border pt-12"
-              href={`/journal/0000`} onClick={handleClick}
+              to="/journal/0000"
             >
               <div className="aspect-[4/3] image-zoom overflow-hidden">
                 <img
@@ -89,7 +89,7 @@ const Journal = () => {
                   </svg>
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
         </motion.div>
       </section>
