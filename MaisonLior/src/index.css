@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+
+
+
+@theme {
+  /* Primary Colors */
+  --color-ivory: lab(98.2832% 0.458986 3.0148);
+  --color-espresso: lab(15.1856% 5.32977 5.10403);
+  --color-champagne: lab(91.9334% 1.86053 9.45435);
+  --color-gold: lab(69.9032% 8.98904 36.664);
+
+  /* Supporting Colors */
+  --color-blush: lab(85.7088% 12.286 6.64362);
+  --color-sage: lab(67.9473% -8.3749 9.48415);
+
+  /* Utility Colors */
+  --color-muted-foreground: lab(41.8702% 5.24409 5.0228);
+  --color-border: lab(86.1203% 1.30636 6.783);
+  --color-destructive: lab(45.9853% 56.8958 34.8481);
+  --color-foreground: lab(15.1856% 5.32977 5.10403);
+
+  /* gradients */
+   --background-image-gradient-hero: linear-gradient(
+    180deg, 
+    lab(2.97449% 3.039 2.27551 / 0.1) 0%, 
+    lab(2.97449% 3.039 2.27551 / 0.45) 60%, 
+    lab(2.97449% 3.039 2.27551 / 0.65) 100%
+  );
+  
+  --background-image-gradient-overlay: linear-gradient(
+    180deg, 
+    lab(15.1856% 5.32977 5.10403 / 0) 0%, 
+    lab(15.1856% 5.32977 5.10403 / 0.55) 100%
+  );
+
+  /* font variables */
+  --font-heading: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility font-heading {
+  /* Automatically bundles the font weight with the family */
+  font-family: var(--font-display);
+  font-weight: 100; 
+}
+
+@utilitu font-body {
+  font-family: var(--font-body);
+  font-weight: 100;
+}
+
+
+.eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    font-size: .7rem;
+    font-weight: 400;
+}
+
+.leading-none {
+    --tw-leading: 1;
+    line-height: 1;
+}
+
+.mask-arrow {
+  mask-image: url("/icons/arrow-top-right.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: url("/icons/arrow-top-right.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.mask-arrow-1 {
+  mask-image: url("/icons/arrow-right.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: url("/icons/arrow-right.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "category": "Philosophy",
+    "date": "May 2026",
+    "title": "The Quiet Luxury of Restraint",
+    "description": "Why the most memorable weddings are often the ones that whisper.",
+    "readTime": "6 min",
+    "image": "/images/CandlesOnTable.jpg",
+    "url": "0000"
+  },
+  {
+    "id": 2,
+    "category": "Guides",
+    "date": "March 2026",
+    "title": "Planning a Destination Wedding Without Losing Yourself",
+    "description": "Twelve gentle principles we share with every couple before they board the plane.",
+    "readTime": "10 min",
+    "image": "/images/SunTyndalThroughDecor.jpg",
+    "url": "0001"
+  },
+  {
+    "id": 3,
+    "category": "Design",
+    "date": "April 2026",
+    "title": "Florals That Feel Like a Garden, Not a Showroom",
+    "description": "A conversation with our lead floral designer on wildness, asymmetry, and trust.",
+    "readTime": "8 min",
+    "image": "/images/brideholdinpinkflowers.jpg",
+    "url": "0002"
+  },
+  {
+    "id": 4,
+    "category": "Inspiration",
+    "date": "December 2025",
+    "title": "A Bride's Letter to Herself the Morning Of",
+    "description": "Words to read with coffee in hand, before anyone else is awake.",
+    "readTime": "4 min",
+    "image": "/images/brideholdingwhiteflowers.jpg",
+    "url": "0003"
+  },
+  {
+    "id": 5,
+    "category": "Trends",
+    "date": "January 2026",
+    "title": "The Rise of the Multi-Day Celebration",
+    "description": "Why couples are abandoning the single Saturday in favor of slow, layered weekends.",
+    "readTime": "7 min",
+    "image": "/images/PeopleHavingAFeast.jpg",
+    "url": "0004"
+  },
+  {
+    "id": 6,
+    "category": "Real Weddings",
+    "date": "February 2026",
+    "title": "Real Wedding — Elena & Marco at Villa del Balbianello",
+    "description": "Three days on Lake Como, cypress lanterns, and the most romantic first dance we've ever witnessed.",
+    "readTime": "12 min",
+    "image": "/images/bridenearsea.jpg",
+    "url": "0005"
+  }
+]

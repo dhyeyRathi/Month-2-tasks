@@ -1,0 +1,202 @@
+[
+  {
+    "id": "01",
+    "couples": "Elena & Marco",
+    "slug":"elena-marco",
+    "location": "Lake Como, Italy",
+    "year": 2025,
+    "type": "Destination",
+    "description": "A villa romance under cypress light.",
+    "duration": "3 Days (Three-day weekend)",
+    "guestsInvited": 120,
+    "atmosphere": "Tactile, slow, candlelit, and focused on intimacy over spectacle.",
+    "coverImage": "/images/bridenearsea.jpg",
+    "images": [
+      "/images/GateWithWhiteFlowers.jpg",
+      "/images/bridenearsea.jpg",
+      "/images/CandlesOnTable.jpg",
+      "/images/brideholdinpinkflowers.jpg",
+      "/images/PeopleHavingAFeast.jpg",
+      "/images/acoupledancing.jpg",
+      "/images/brideholdingwhiteflowers.jpg",
+      "/images/SunTyndalThroughDecor.jpg"
+    ],
+     "venue": "Villa del Balbianello, Lake Como",
+  "timeline": {
+    "8:00": {
+      "title": "Bridal preparations",
+      "description": "Champagne breakfast and quiet rituals at the villa."
+    },
+    "14:00": {
+      "title": "Guest arrival",
+      "description": "Aperitivo on the terrace, string trio playing."
+    },
+    "16:00": {
+      "title": "Ceremony",
+      "description": "Vows under a cypress arch at the water's edge."
+    },
+    "18:30": {
+      "title": "Golden hour portraits",
+      "description": "Couple shoots along the lakeside paths."
+    },
+    "20:00": {
+      "title": "Dinner",
+      "description": "Six-course tasting menu, candlelit long tables."
+    },
+    "23:00": {
+      "title": "First dance & celebration",
+      "description": "Live band, sparkler send-off at midnight."
+    }
+  }
+  },
+  {
+    "id": "02",
+    "couples": "Sophia & James",
+    "slug":"sophia-james",
+    "location": "Provence, France",
+    "year": 2024,
+    "type": "Chateau",
+    "description": "Lavender fields and a candlelit chateau.",
+    "duration": "3 Days (Three-day weekend)",
+    "guestsInvited": 150,
+    "atmosphere": "Classic French chateau aesthetic with lavender field backdrops.",
+    "coverImage": "/images/PeopleHavingAFeast.jpg",
+    "images": [
+      "/images/GateWithWhiteFlowers.jpg",
+      "/images/bridenearsea.jpg",
+      "/images/CandlesOnTable.jpg",
+      "/images/brideholdinpinkflowers.jpg",
+      "/images/PeopleHavingAFeast.jpg",
+      "/images/acoupledancing.jpg",
+      "/images/brideholdingwhiteflowers.jpg",
+      "/images/SunTyndalThroughDecor.jpg"
+    ],
+     "venue": "Villa del Balbianello, Lake Como",
+  "timeline": {
+    "8:00": {
+      "title": "Bridal preparations",
+      "description": "Champagne breakfast and quiet rituals at the villa."
+    },
+    "14:00": {
+      "title": "Guest arrival",
+      "description": "Aperitivo on the terrace, string trio playing."
+    },
+    "16:00": {
+      "title": "Ceremony",
+      "description": "Vows under a cypress arch at the water's edge."
+    },
+    "18:30": {
+      "title": "Golden hour portraits",
+      "description": "Couple shoots along the lakeside paths."
+    },
+    "20:00": {
+      "title": "Dinner",
+      "description": "Six-course tasting menu, candlelit long tables."
+    },
+    "23:00": {
+      "title": "First dance & celebration",
+      "description": "Live band, sparkler send-off at midnight."
+    }
+  }
+  },
+  {
+    "id": "03",
+    "couples": "Amara & Noah",
+    "slug":"amara-noah",
+    "location": "Santorini, Greece",
+    "year": 2024,
+    "type": "Coastal",
+    "description": "Bougainvillea, sea breeze, and gold hour.",
+    "duration": "3 Days (Three-day weekend)",
+    "guestsInvited": 85,
+    "atmosphere": "Coastal elegance, focusing on the golden hour and local natural beauty.",
+    "coverImage": "/images/SunTyndalThroughDecor.jpg",
+    "images": [
+      "/images/GateWithWhiteFlowers.jpg",
+      "/images/bridenearsea.jpg",
+      "/images/CandlesOnTable.jpg",
+      "/images/brideholdinpinkflowers.jpg",
+      "/images/PeopleHavingAFeast.jpg",
+      "/images/acoupledancing.jpg",
+      "/images/brideholdingwhiteflowers.jpg",
+      "/images/SunTyndalThroughDecor.jpg"
+    ],
+     "venue": "Villa del Balbianello, Lake Como",
+  "timeline": {
+    "8:00": {
+      "title": "Bridal preparations",
+      "description": "Champagne breakfast and quiet rituals at the villa."
+    },
+    "14:00": {
+      "title": "Guest arrival",
+      "description": "Aperitivo on the terrace, string trio playing."
+    },
+    "16:00": {
+      "title": "Ceremony",
+      "description": "Vows under a cypress arch at the water's edge."
+    },
+    "18:30": {
+      "title": "Golden hour portraits",
+      "description": "Couple shoots along the lakeside paths."
+    },
+    "20:00": {
+      "title": "Dinner",
+      "description": "Six-course tasting menu, candlelit long tables."
+    },
+    "23:00": {
+      "title": "First dance & celebration",
+      "description": "Live band, sparkler send-off at midnight."
+    }
+  }
+  },
+  
+  {
+    "id": "04",
+    "couples": "Isla & Rhys",
+    "slug":"isla-rhys",
+    "location": "Cotswolds, England",
+    "year": 2023,
+    "type": "Garden",
+    "description": "An English garden in full bloom.",
+    "duration": "3 Days (Three-day weekend)",
+    "guestsInvited": 110,
+    "atmosphere": "English countryside charm, focused on seasonal blooms and a slow-paced garden setting.",
+    "coverImage": "/images/GateWithWhiteFlowers.jpg",
+    "images": [
+      "/images/GateWithWhiteFlowers.jpg",
+      "/images/bridenearsea.jpg",
+      "/images/CandlesOnTable.jpg",
+      "/images/brideholdinpinkflowers.jpg",
+      "/images/PeopleHavingAFeast.jpg",
+      "/images/acoupledancing.jpg",
+      "/images/brideholdingwhiteflowers.jpg",
+      "/images/SunTyndalThroughDecor.jpg"
+    ], "venue": "Villa del Balbianello, Lake Como",
+  "timeline": {
+    "8:00": {
+      "title": "Bridal preparations",
+      "description": "Champagne breakfast and quiet rituals at the villa."
+    },
+    "14:00": {
+      "title": "Guest arrival",
+      "description": "Aperitivo on the terrace, string trio playing."
+    },
+    "16:00": {
+      "title": "Ceremony",
+      "description": "Vows under a cypress arch at the water's edge."
+    },
+    "18:30": {
+      "title": "Golden hour portraits",
+      "description": "Couple shoots along the lakeside paths."
+    },
+    "20:00": {
+      "title": "Dinner",
+      "description": "Six-course tasting menu, candlelit long tables."
+    },
+    "23:00": {
+      "title": "First dance & celebration",
+      "description": "Live band, sparkler send-off at midnight."
+    }
+  }
+  }
+]
