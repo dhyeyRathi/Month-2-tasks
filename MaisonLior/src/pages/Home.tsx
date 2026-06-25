@@ -1,14 +1,13 @@
-import React from "react";
+
 import Hero from "../components/sections/Hero";
 import services from "../data/services.json";
 import Button from "../components/ui/Button";
 import { NavLink } from "react-router-dom";
 import pfs from "../data/couples.json";
-import { easeInOut, motion } from "motion/react";
+import {  motion } from "motion/react";
 import StatsSection from "../components/layout/StatsSection";
 import { Star, ArrowRight } from "lucide-react";
 import CTA from "../components/sections/CTA"
-import Footer from "../components/layout/Footer";
 import Card from "../components/ui/Card";
 import arrowRight from "/icons/arrow-right.svg";
 

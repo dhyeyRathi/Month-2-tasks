@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "motion/react";
 import StatsSection from "../components/layout/StatsSection";
 

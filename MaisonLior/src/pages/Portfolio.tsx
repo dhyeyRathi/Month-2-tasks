@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { NavLink } from "react-router-dom";
+
 import couplesData from "../data/couples.json";
 import Card from "../components/ui/Card";
 

@@ -1,4 +1,4 @@
-import React from "react";
+
 import journals from "../data/journals.json";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
