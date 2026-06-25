@@ -1,6 +1,6 @@
 "use client";
 
-import { animate, useInView } from "motion/react";
+import { animate, useInView, easeOut } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 
 type CounterProps = {
@@ -13,7 +13,7 @@ const Counter = ({ target, isInView }: CounterProps) => {
 
   useEffect(() => {
     if (!isInView) return;
-      const controls = animate(0, target, { duration: 2, ease: "ease-out",
+      const controls = animate(0 as number, target, { duration: 2, ease: easeOut,
         onUpdate(value) {
           setCount(Math.floor(value));
         },

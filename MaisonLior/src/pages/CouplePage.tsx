@@ -121,7 +121,7 @@ const CouplePage = () => {
           </div>
 
           <div className="mt-20 max-w-3xl mx-auto">
-            {Object.entries(couple.timeline).map(([time, details]) => (
+            {(Object.entries(couple.timeline) as [string, { title: string; description: string }][]).map(([time, details]) => (
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -162,7 +162,7 @@ const CouplePage = () => {
           </div>
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
-            {couple.images.map((src, index) => {
+            {couple.images.map((src: string, index: number) => {
               const isLarge = index === 0 || index === 5;
 
               return (

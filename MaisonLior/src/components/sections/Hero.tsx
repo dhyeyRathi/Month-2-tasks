@@ -1,9 +1,9 @@
-import React, { type ReactNode } from "react";
+import { type ReactNode } from "react";
 import HeroBg from "/images/SunTyndalThroughDecor.jpg";
-import Button from "../ui/Button";
+
 import { easeInOut, motion } from "motion/react";
 
-import { NavLink } from "react-router-dom";
+
 
 interface HeroProps {
   variant?: "home" | "couple"

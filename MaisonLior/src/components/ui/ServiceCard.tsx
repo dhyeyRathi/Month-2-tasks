@@ -45,14 +45,14 @@ export const packages = [
     ],
     variant: "light",
   },
-];
+] as const;
 
 type PricingCardProps = {
-  id: string;
-  title: string;
-  description: string;
-  price: string;
-  features: string[];
+  id?: string;
+  title?: string;
+  description?: string;
+  price?: string;
+  features?: readonly string[];
   variant?: "light" | "dark";
 };
 
@@ -90,7 +90,7 @@ const ServiceCard = ({
       <p className="font-heading italic text-2xl mt-8">{price}</p>
 
       <ul className="mt-8 font-body space-y-3 flex-1">
-        {features.map((feature, index) => (
+        {(features || []).map((feature, index) => (
           <li key={index} className="flex items-start gap-3 text-sm">
             <Check className="h-4 w-4 mt-0.5 shrink-0 text-gold" />
             <span>{feature}</span>
