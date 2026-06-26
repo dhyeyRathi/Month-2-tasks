@@ -3,50 +3,82 @@
 
   <url>
     <loc>https://maisonlior-dhyey.vercel.app</loc>
+    <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/about</loc>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/services</loc>
+    <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/portfolio</loc>
+    <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/journal</loc>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/contact</loc>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/portfolio/elena-marco</loc>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/portfolio/sophia-james</loc>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/portfolio/amara-noah</loc>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/portfolio/isla-rhys</loc>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/journal/0000</loc>
+    <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/journal/0001</loc>
+    <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/journal/0002</loc>
+    <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/journal/0003</loc>
+    <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/journal/0004</loc>
+    <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://maisonlior-dhyey.vercel.app/journal/0005</loc>
+    <priority>0.6</priority>
   </url>
+
 </urlset>
