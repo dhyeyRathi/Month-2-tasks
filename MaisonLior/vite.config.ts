@@ -6,6 +6,6 @@ import sitemap from "vite-plugin-sitemap";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(),sitemap({
-      hostname: "https://yourdomain.com",
+      hostname: "https://maisonlior-dhyey.vercel.app/",
     })],
 })
