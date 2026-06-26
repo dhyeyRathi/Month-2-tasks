@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import couples from "../data/couples.json";
 import Hero from "../components/sections/Hero";
 import FadeInUp from "../components/ui/FadeInUp";
+import SeoSchema from "../components/SeoSchema";
 
 const CouplePage = () => {
   const { slug } = useParams();
@@ -21,6 +22,7 @@ const CouplePage = () => {
   };
   return (
     <div>
+      <SeoSchema type="couple" data={couple} />
       <Helmet>
         <title>
           {couple ? `${couple.couples} | Maison Lior` : "Maison Lior"}

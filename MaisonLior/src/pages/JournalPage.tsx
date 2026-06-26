@@ -3,6 +3,7 @@ import journalData from "../data/journals.json";
 import FadeInUp from "../components/ui/FadeInUp";
 import LeaveThought from "../components/sections/LeaveThought";
 import { Helmet } from "react-helmet-async";
+import SeoSchema from "../components/SeoSchema";
 
 
 const JournalPage = () => {
@@ -17,8 +18,10 @@ const JournalPage = () => {
   const handleClick = () => {
     window.scrollTo(0, 0);
   };
+  const article = journalData.find((journal) => journal.url === url);
   return (
     <div>
+      <SeoSchema type="article" data={article} />
       <Helmet>
   <title>{journal ? `${journal.title} | Maison Lior` : "Maison Lior"}</title>
   <meta
@@ -26,7 +29,7 @@ const JournalPage = () => {
     content={`Explore ${journal.title}, a beautiful wedding story captured by Maison Lior as ${journal.category}.`}
   />
 </Helmet>
-      <article className="bg-ivory pt-40 pb-24 font-light">
+      <article className="bg-ivory pt-40 pb-24 ">
         {/* Header */}
         <header className="mx-auto max-w-3xl px-6 text-center">
           <FadeInUp 

@@ -32,7 +32,7 @@ export default function CTA() {
           <div style={{ opacity: 1, transform: "none" }}>
             <a
               href="https://instagram.com"
-              className="text-xs tracking-[0.25em] uppercase font-body font-light border-b border-foreground pb-1 hover:text-gold hover:border-gold transition-colors"
+              className="text-xs tracking-[0.25em] uppercase font-body  border-b border-foreground pb-1 hover:text-gold hover:border-gold transition-colors"
             >
               Follow on Instagram
             </a>

@@ -2,6 +2,7 @@ import journals from "../data/journals.json";
 import { Link } from "react-router-dom";
 import FadeInUp from "../components/ui/FadeInUp";
 import { Helmet } from "react-helmet-async";
+import SeoSchema from "../components/SeoSchema";
 
 const Journal = () => {
   const handleClick = () => {
@@ -9,6 +10,7 @@ const Journal = () => {
   };
   return (
     <div className="text-light">
+      <SeoSchema type="journal" />
       <Helmet>
         <title>Journal | Maison Lior</title>
         <meta

@@ -1,7 +1,7 @@
 import  { useState } from "react";
 import FadeInUp from "../components/ui/FadeInUp";
 import { Helmet } from "react-helmet-async";
-
+import SeoSchema from "../components/SeoSchema";
 
 const faqData = [
   {
@@ -37,7 +37,8 @@ const faqData = [
 const Contact = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <div className="font-light">
+    <div className="">
+      <SeoSchema type="contact" />
       <Helmet>
         <title>Contact Us | Maison Lior</title>
         <meta
@@ -223,7 +224,7 @@ const Contact = () => {
         </FadeInUp>
       </section>
       {/* FAQs */}
-      <section className="bg-champagne/40 py-32">
+      <section className="bg-champagne/50 py-32">
          <FadeInUp 
           className="mx-auto max-w-4xl px-6">
           <div>

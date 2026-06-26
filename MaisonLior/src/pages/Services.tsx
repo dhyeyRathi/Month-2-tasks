@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import ServiceCard, { packages } from "../components/ui/ServiceCard";
 import FadeInUp from "../components/ui/FadeInUp";
+import SeoSchema from "../components/SeoSchema";
 
 const Services = () => {
   const services = [
@@ -62,7 +63,8 @@ const Services = () => {
     },
   ];
   return (
-    <div className="font-light">
+    <div className="">
+      <SeoSchema type="services" />
       <Helmet>
         <title>Services | Maison Lior</title>
         <meta name="description" content="Services we provide to plan and enhance your happy moments" />

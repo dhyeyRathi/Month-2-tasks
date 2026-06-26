@@ -3,6 +3,7 @@ import FadeInUp from "../components/ui/FadeInUp";
 import { Helmet } from "react-helmet-async";
 import couplesData from "../data/couples.json";
 import Card from "../components/ui/Card";
+import SeoSchema from "../components/SeoSchema";
 
 const Portfolio = () => {
   const [selectedFilter, setSelectedFilter] = useState("All");
@@ -23,12 +24,13 @@ const Portfolio = () => {
   const rightColumn = filteredData.slice(middle);
 
   return (
-    <div className="bg-ivory font-light">
+    <div className="bg-ivory ">
+      <SeoSchema type="portfolio" />
       <Helmet>
         <title>Our Portfolio | Maison Lior</title>
         <meta name="description" content="Portfolio of our past work." />
       </Helmet>
-      <section className="pt-40 pb-16 bg-ivory font-light">
+      <section className="pt-40 pb-16 bg-ivory ">
         <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >

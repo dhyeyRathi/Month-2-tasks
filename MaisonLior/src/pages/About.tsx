@@ -2,6 +2,8 @@
 import FadeInUp from "../components/ui/FadeInUp";
 import StatsSection from "../components/layout/StatsSection";
 import { Helmet } from "react-helmet-async";
+import SeoSchema from "../components/SeoSchema";
+
 
 const About = () => {
   const team = [
@@ -28,13 +30,14 @@ const About = () => {
     },
   ];
   return (
-    <div className="bg-ivory font-light">
+    <div className="bg-ivory ">
+      <SeoSchema type="about" />
       <Helmet>
         <title>Atelier | Maison Lior</title>
         <meta name="description" content="Know more about us and our team." />
       </Helmet>
       {/* title */}
-      <section className="relative pt-40 pb-32 font-light bg-ivory">
+      <section className="relative pt-40 pb-32  bg-ivory">
         <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-end"
         >
@@ -86,7 +89,7 @@ const About = () => {
       </section>
 
       {/* what we believe */}
-      <section className="bg-champagne/40 py-32">
+      <section className="bg-champagne/50 py-32">
          <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-12">
           <div

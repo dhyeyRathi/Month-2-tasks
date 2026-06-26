@@ -44,7 +44,7 @@ const PortfolioCard = ({ couple, index = 0, variant }: PortfolioCardProps) => {
           />
         </div>
 
-        <div className="mt-6 flex items-end justify-between font-body font-light">
+        <div className="mt-6 flex items-end justify-between font-body ">
           <div>
             <p className="eyebrow text-gold">
               {variant === "home"
@@ -52,7 +52,7 @@ const PortfolioCard = ({ couple, index = 0, variant }: PortfolioCardProps) => {
                 : `${couple.type} · ${couple.year}`}
             </p>
 
-            <h3 className="text-3xl md:text-4xl mt-3 italic font-heading font-light">
+            <h3 className="text-3xl md:text-4xl mt-3 italic font-heading ">
               {couple.couples}
             </h3>
 

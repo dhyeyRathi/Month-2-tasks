@@ -10,7 +10,7 @@ interface HeroProps {
 const Hero = ({ variant, img, children }: HeroProps) => {
   return (
     <div
-      className={`w-full relative overflow-hidden font-light ${
+      className={`w-full relative overflow-hidden  ${
         variant === "home" ? "h-screen" : "h-[90svh] min-h-[680px]"
       }`}
     >

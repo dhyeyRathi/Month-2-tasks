@@ -10,6 +10,9 @@ import CTA from "../components/sections/CTA";
 import Card from "../components/ui/Card";
 import arrowRight from "/icons/arrow-right.svg";
 import { Helmet } from "react-helmet-async";
+import SeoSchema from "../components/SeoSchema";
+
+
 
 const Home = () => {
   const selectedIds = ["06", "04", "03", "08"];
@@ -23,6 +26,7 @@ const Home = () => {
 
   return (
     <div className="">
+      <SeoSchema type="home" />
       <Helmet>
         <title>Home | Maison Lior</title>
         <meta name="description" content="A summary of our planned weddings" />
@@ -42,7 +46,7 @@ const Home = () => {
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <NavLink
               to="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-ivory text-foreground text-xs tracking-[0.25em] uppercase hover:bg-champagne transition-colors"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-ivory text-foreground text-xs tracking-[0.3em] uppercase hover:bg-champagne transition-colors"
             >
               Begin your story
               <img src={arrowRight} className="w-4 h-4" alt="Right arrow" />
@@ -84,7 +88,7 @@ const Home = () => {
       </section>
 
       {/* services section */}
-      <section className="bg-champagne/40 py-32">
+      <section className="bg-champagne/60 py-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           <FadeInUp
             className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
@@ -188,7 +192,7 @@ const Home = () => {
           <FadeInUp
             style={{ opacity: 1, transform: "none" }}
           >
-            <p className="eyebrow">— The process</p>
+            <p className="eyebrow ">— The process</p>
 
             <h2 className=" text-5xl md:text-6xl mt-4 max-w-2xl">
               <span className="block font-heading text-espresso">

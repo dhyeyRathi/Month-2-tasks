@@ -10,7 +10,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-espresso text-ivory font-body font-light">
+    <footer className="bg-espresso text-ivory font-body ">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12 py-20">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left */}
