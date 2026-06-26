@@ -1,6 +1,6 @@
 import journals from "../data/journals.json";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 import { Helmet } from "react-helmet-async";
 
 const Journal = () => {
@@ -18,11 +18,7 @@ const Journal = () => {
       </Helmet>
       {/* header */}
       <section className="pt-40 pb-16 bg-ivory">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div style={{ opacity: 1, transform: "none" }}>
@@ -37,16 +33,12 @@ const Journal = () => {
               </span>
             </h1>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* horizantal journal */}
       <section className="bg-ivory pb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div style={{ opacity: 1, transform: "none" }}>
@@ -60,7 +52,7 @@ const Journal = () => {
                   className="h-full w-full object-cover hover:scale-110 duration-800 transition-all ease-in-out"
                   loading="lazy"
                   decoding="async"
-                  src="/images/CandlesOnTable.jpg"
+                  src="/images/CandlesOnTable.webp"
                 />
               </div>
 
@@ -98,24 +90,16 @@ const Journal = () => {
               </div>
             </Link>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* grid journals */}
       <section className="bg-ivory py-24 ">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16"
         >
-          {journals.slice(1).map((journal, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 0.3 * (index + 1) }}
-              viewport={{ once: true }}
+          {journals.slice(1).map((journal) => (
+            <FadeInUp 
               key={journal.id}
               style={{ opacity: 1, transform: "none" }}
             >
@@ -146,9 +130,9 @@ const Journal = () => {
                   {journal.description}
                 </p>
               </Link>
-            </motion.div>
+            </FadeInUp>
           ))}
-        </motion.div>
+        </FadeInUp>
       </section>
     </div>
   );

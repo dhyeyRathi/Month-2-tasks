@@ -1,5 +1,5 @@
 
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 import StatsSection from "../components/layout/StatsSection";
 import { Helmet } from "react-helmet-async";
 
@@ -10,21 +10,21 @@ const About = () => {
       role: "Founder & Creative Director",
       description:
         "Eighteen years designing celebrations across four continents.",
-      image: "/images/people/LiorAmari.jpg",
+      image: "/images/people/LiorAmari.webp",
     },
     {
       name: "Camille Devereaux",
       role: "Head of Design",
       description:
         "Former editor at Vogue Living, now shaping our visual language.",
-      image: "/images/people/CamilleDevereaux.jpg",
+      image: "/images/people/CamilleDevereaux.webp",
     },
     {
       name: "Henri Marchetti",
       role: "Director of Production",
       description:
         "Logistics maestro, fluent in five languages and every venue's quirks.",
-      image: "/images/people/HenriMarchetti.jpg",
+      image: "/images/people/HenriMarchetti.webp",
     },
   ];
   return (
@@ -35,11 +35,7 @@ const About = () => {
       </Helmet>
       {/* title */}
       <section className="relative pt-40 pb-32 font-light bg-ivory">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-end"
         >
           <div
@@ -69,37 +65,29 @@ const About = () => {
               feel like the truest version of the couple at its center.
             </p>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* image */}
       <section className="bg-ivory pb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div className="aspect-[16/9] image-zoom overflow-hidden">
             <img
-              src="/images/brideholdingwhiteflowers.jpg"
+              src="/images/brideholdingwhiteflowers.webp"
               alt="Bride at window"
               className="h-full w-full object-cover hover:scale-105 transition-all duration-800 ease-in-out"
               loading="lazy"
               decoding="async"
             />
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* what we believe */}
       <section className="bg-champagne/40 py-32">
-         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+         <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-12">
           <div
             className="lg:col-span-4"
@@ -145,7 +133,7 @@ const About = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* team */}
@@ -163,11 +151,7 @@ const About = () => {
 
           <div className="mt-20 grid md:grid-cols-3 gap-x-6 gap-y-16">
             {team.map((member, index) => (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 100, y: 0 }}
-                transition={{ duration: 0.3 * (index + 1) }}
-                viewport={{ once: true }}
+              <FadeInUp 
                 key={index}
               >
                 <div className="aspect-[4/5] image-zoom overflow-hidden">
@@ -188,7 +172,7 @@ const About = () => {
                 <p className="text-sm text-muted-foreground mt-4 font-body leading-relaxed">
                   {member.description}
                 </p>
-              </motion.div>
+              </FadeInUp>
             ))}
           </div>
         </div>

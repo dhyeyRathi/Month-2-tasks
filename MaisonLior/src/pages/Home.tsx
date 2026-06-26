@@ -3,9 +3,9 @@ import services from "../data/services.json";
 import Button from "../components/ui/Button";
 import { NavLink } from "react-router-dom";
 import pfs from "../data/couples.json";
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 import StatsSection from "../components/layout/StatsSection";
-import { Star, ArrowRight } from "lucide-react";
+
 import CTA from "../components/sections/CTA";
 import Card from "../components/ui/Card";
 import arrowRight from "/icons/arrow-right.svg";
@@ -40,11 +40,14 @@ const Home = () => {
             </span>
           </h1>
           <div className="mt-10 flex flex-wrap items-center gap-6">
-            <Button className="inline-flex items-center gap-3 px-8 py-4 bg-ivory text-foreground text-xs tracking-[0.25em] uppercase hover:bg-champagne transition-colors">
-              <NavLink to="/contact">Begin your story </NavLink>
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-ivory text-foreground text-xs tracking-[0.25em] uppercase hover:bg-champagne transition-colors"
+            >
+              Begin your story
+              <img src={arrowRight} className="w-4 h-4" alt="Right arrow" />
+            </NavLink>
 
-              <img src={arrowRight} className="w-4 h-4" alt="Right arrow"/>
-            </Button>
             <a
               className="text-ivory/90 text-xs tracking-[0.25em] uppercase border-b border-ivory/40 pb-1 hover:text-champagne hover:border-champagne transition-colors"
               href="/portfolio"
@@ -56,21 +59,13 @@ const Home = () => {
       </Hero>
       {/* text section */}
       <section className="bg-ivory py-32 lg:py-48">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-12"
         >
           <div className="lg:col-span-3 ">
             <p className="eyebrow">— A few words</p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 100, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <FadeInUp
             className="lg:col-span-9 "
           >
             <p className=" text-3xl md:text-5xl lg:text-6xl font-heading text-espresso font-thin tracking-[-0.02em]">
@@ -84,18 +79,14 @@ const Home = () => {
               <div className="h-px w-12 bg-gold"></div>
               <p className="">Lior Amari, Founder</p>
             </div>
-          </motion.div>
-        </motion.div>
+          </FadeInUp>
+        </FadeInUp>
       </section>
 
       {/* services section */}
       <section className="bg-champagne/40 py-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 100, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <FadeInUp
             className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
           >
             <div>
@@ -114,14 +105,10 @@ const Home = () => {
                 All services
               </a>
             </div>
-          </motion.div>
+          </FadeInUp>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
             {homeServices.map((services, index) => (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 100, y: 0 }}
-                transition={{ duration: 0.2 * (index + 1) }}
-                viewport={{ once: true }}
+              <FadeInUp
                 key={services?.id}
               >
                 <a className="group block" href="/services">
@@ -137,11 +124,11 @@ const Home = () => {
                   <h3 className="font-heading text-2xl mt-2 group-hover:text-gold transition-colors">
                     {services?.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mt-3 font-body leading-relaxed">
                     {services?.description}
                   </p>
                 </a>
-              </motion.div>
+              </FadeInUp>
             ))}
           </div>
         </div>
@@ -151,18 +138,14 @@ const Home = () => {
       <section className="bg-ivory py-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           {/* Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <FadeInUp
           >
             <p className="eyebrow">— Featured weddings</p>
 
             <h2 className=" text-5xl md:text-6xl mt-4">
               <span className="block font-heading">Stories worth telling.</span>
             </h2>
-          </motion.div>
+          </FadeInUp>
 
           {/* Cards */}
           <div className="mt-20 grid md:grid-cols-2 gap-x-6 gap-y-20">
@@ -202,11 +185,7 @@ const Home = () => {
       {/* text section */}
       <section className="bg-ivory py-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 100, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <FadeInUp
             style={{ opacity: 1, transform: "none" }}
           >
             <p className="eyebrow">— The process</p>
@@ -216,14 +195,10 @@ const Home = () => {
                 Five movements, gently composed.
               </span>
             </h2>
-          </motion.div>
+          </FadeInUp>
 
           <div className="mt-20 grid md:grid-cols-5 gap-8 md:gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ once: true }}
+            <FadeInUp
               className="border-t border-border pt-6"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -234,13 +209,9 @@ const Home = () => {
               <p className="text-sm text-muted-foreground mt-3 font-body leading-relaxed">
                 An unhurried conversation to learn your story, taste, and dream.
               </p>
-            </motion.div>
+            </FadeInUp>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <FadeInUp
               className="border-t border-border pt-6"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -251,13 +222,9 @@ const Home = () => {
               <p className="text-sm text-muted-foreground mt-3 font-body leading-relaxed">
                 Moodboards, palette, paper goods, and a full creative direction.
               </p>
-            </motion.div>
+            </FadeInUp>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
+            <FadeInUp
               className="border-t border-border pt-6"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -268,13 +235,9 @@ const Home = () => {
               <p className="text-sm text-muted-foreground mt-3 font-body leading-relaxed">
                 We assemble the right vendors, venues, and craftspeople for you.
               </p>
-            </motion.div>
+            </FadeInUp>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 1.2 }}
-              viewport={{ once: true }}
+            <FadeInUp
               className="border-t border-border pt-6"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -285,13 +248,9 @@ const Home = () => {
               <p className="text-sm text-muted-foreground mt-3 font-body leading-relaxed">
                 Detailed run-of-show, rehearsals, and on-site orchestration.
               </p>
-            </motion.div>
+            </FadeInUp>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 1.4 }}
-              viewport={{ once: true }}
+            <FadeInUp
               className="border-t border-border pt-6"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -302,16 +261,16 @@ const Home = () => {
               <p className="text-sm text-muted-foreground mt-3 font-body leading-relaxed">
                 You are present. We hold every thread so you don&apos;t have to.
               </p>
-            </motion.div>
+            </FadeInUp>
           </div>
         </div>
       </section>
 
       {/* testimonial section */}
       <section className="relative py-40 overflow-hidden">
-        <motion.div className="absolute inset-0">
+        <FadeInUp className="absolute inset-0">
           <img
-            src="/images/CandlesOnTable.jpg"
+            src="/images/CandlesOnTable.webp"
             alt="Wedding tablescape"
             className="h-full w-full object-cover"
             loading="lazy"
@@ -319,22 +278,16 @@ const Home = () => {
           />
 
           <div className="absolute inset-0 bg-ivory/85"></div>
-        </motion.div>
+        </FadeInUp>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp
           className="relative mx-auto max-w-4xl px-6 text-center"
         >
           <div style={{ opacity: 1, transform: "none" }}>
             <div className="flex justify-center gap-1 text-gold mb-8">
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
-              <Star className="h-4 w-4 fill-current" />
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              ))}
             </div>
 
             <p className=" text-3xl md:text-5xl font-heading leading-[1.2] italic">
@@ -347,7 +300,7 @@ const Home = () => {
               — Elena & Marco, Lake Como
             </p>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* CTA INSTAGRAM */}
@@ -355,11 +308,7 @@ const Home = () => {
 
       {/* extra footer */}
       <section className="bg-espresso text-ivory py-40">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-end"
         >
           <div
@@ -392,10 +341,10 @@ const Home = () => {
               href="/contact"
             >
               Make an enquiry
-              <ArrowRight className="h-4 w-4" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
             </a>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
     </div>
   );

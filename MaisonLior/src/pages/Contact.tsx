@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 import { Helmet } from "react-helmet-async";
 
 
@@ -47,11 +47,7 @@ const Contact = () => {
       </Helmet>
       {/* header */}
       <section className="pt-40 pb-20 bg-ivory">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-end"
         >
           <div className="lg:col-span-8">
@@ -71,15 +67,11 @@ const Contact = () => {
               every enquiry personally, within three days.
             </p>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
       {/* feedback form */}
       <section className="bg-ivory pb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid lg:grid-cols-12 gap-16"
         >
           {/* Left */}
@@ -178,7 +170,7 @@ const Contact = () => {
           <div className="lg:col-span-5 space-y-12">
             <div className="aspect-[4/5] image-zoom">
               <img
-                src="/images/brideholdinpinkflowers.jpg"
+                src="/images/brideholdinpinkflowers.webp"
                 alt="Wedding bouquet"
                 className="h-full w-full object-cover"
               />
@@ -212,16 +204,12 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* map section */}
       <section className="bg-ivory pb-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div className="aspect-[21/9] overflow-hidden border border-border">
@@ -232,15 +220,11 @@ const Contact = () => {
               loading="lazy"
             />
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
       {/* FAQs */}
       <section className="bg-champagne/40 py-32">
-         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+         <FadeInUp 
           className="mx-auto max-w-4xl px-6">
           <div>
             <p className="eyebrow">— Frequently asked</p>
@@ -255,11 +239,7 @@ const Contact = () => {
               const isOpen = openIndex === index;
 
               return (
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 100, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
+                <FadeInUp 
                   key={index}
                   className="border-t border-foreground/15 last:border-b"
                 >
@@ -299,11 +279,11 @@ const Contact = () => {
                       {faq.answer}
                     </p>
                   </div>
-                </motion.div>
+                </FadeInUp>
               );
             })}
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
     </div>
   );

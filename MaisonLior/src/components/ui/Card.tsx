@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { useRef, useEffect, useState } from "react";
 
 interface PortfolioCardProps {
   couple: any;
@@ -12,12 +12,28 @@ const handleClick = () => {
 };
 
 const PortfolioCard = ({ couple, index = 0, variant }: PortfolioCardProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 * (index + 1) }}
-      viewport={{ once: true }}
+    <div
+      ref={ref}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(30px)",
+        transition: `opacity ${0.3 * (index + 1)}s ease, transform ${0.3 * (index + 1)}s ease`,
+      }}
     >
       <Link className="group block" to={`/portfolio/${couple.slug}`} onClick={handleClick}>
         <div className="aspect-[4/5] overflow-hidden">
@@ -56,7 +72,7 @@ const PortfolioCard = ({ couple, index = 0, variant }: PortfolioCardProps) => {
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 

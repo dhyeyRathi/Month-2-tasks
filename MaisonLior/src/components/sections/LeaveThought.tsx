@@ -1,5 +1,5 @@
 import React from "react";
-import {motion} from "motion/react"
+import { useFadeInUp } from "../ui/FadeInUp";
 
 const LeaveThought = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -7,14 +7,13 @@ const LeaveThought = () => {
     console.log("Form submitted");
   };
 
+  const { ref, visible } = useFadeInUp();
+
   return (
     <section className="bg-champagne/50 py-24">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 100, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mx-auto max-w-2xl px-6"
+      <div
+        ref={ref}
+        className={`fade-in-up${visible ? " visible" : ""} mx-auto max-w-2xl px-6`}
       >
         <div>
           <p className="eyebrow">— A note</p>
@@ -67,7 +66,7 @@ const LeaveThought = () => {
             </button>
           </form>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

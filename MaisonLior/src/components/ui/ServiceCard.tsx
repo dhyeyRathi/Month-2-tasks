@@ -1,4 +1,4 @@
-import { Check, ArrowRight } from "lucide-react";
+
 
 export const packages = [
   {
@@ -92,7 +92,7 @@ const ServiceCard = ({
       <ul className="mt-8 font-body space-y-3 flex-1">
         {(features || []).map((feature, index) => (
           <li key={index} className="flex items-start gap-3 text-sm">
-            <Check className="h-4 w-4 mt-0.5 shrink-0 text-gold" />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mt-0.5 shrink-0 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
             <span>{feature}</span>
           </li>
         ))}
@@ -105,7 +105,7 @@ const ServiceCard = ({
         }`}
       >
         Enquire
-        <ArrowRight className="h-3 w-3" />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
   );

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://https://maisonlior-dhyey.vercel.app/sitemap.xml

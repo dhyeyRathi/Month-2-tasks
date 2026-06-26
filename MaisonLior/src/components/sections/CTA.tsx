@@ -1,26 +1,25 @@
-import { motion } from "motion/react";
+import { useFadeInUp } from "../ui/FadeInUp";
 
 export default function CTA() {
   const images = [
-    "/images/GateWithWhiteFlowers.jpg",
-    "/images/bridenearsea.jpg",
-    "/images/CandlesOnTable.jpg",
-    "/images/brideholdinpinkflowers.jpg",
-    "/images/PeopleHavingAFeast.jpg",
-    "/images/acoupledancing.jpg",
-    "/images/brideholdingwhiteflowers.jpg",
-    "/images/SunTyndalThroughDecor.jpg",
+    "/images/GateWithWhiteFlowers.webp",
+    "/images/bridenearsea.webp",
+    "/images/CandlesOnTable.webp",
+    "/images/brideholdinpinkflowers.webp",
+    "/images/PeopleHavingAFeast.webp",
+    "/images/acoupledancing.webp",
+    "/images/brideholdingwhiteflowers.webp",
+    "/images/SunTyndalThroughDecor.webp",
   ];
 
+  const { ref: ref1, visible: v1 } = useFadeInUp();
+  const { ref: ref2, visible: v2 } = useFadeInUp();
   return (
     <section className="bg-ivory py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
+        <div
+          ref={ref1}
+          className={`fade-in-up${v1 ? " visible" : ""} flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16`}
         >
           <div style={{ opacity: 1, transform: "none" }}>
             <p className="eyebrow">— Moments</p>
@@ -38,13 +37,12 @@ export default function CTA() {
               Follow on Instagram
             </a>
           </div>
-        </motion.div>
+        </div>
 
-       <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+        <div
+          ref={ref2}
+          className={`fade-in-up${v2 ? " visible" : ""} grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4`}
+        >
           {/* Big left image */}
           <div
             className="md:row-span-2 aspect-[3/4] md:aspect-[3/5]"
@@ -106,7 +104,7 @@ export default function CTA() {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

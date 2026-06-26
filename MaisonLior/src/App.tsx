@@ -1,42 +1,46 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
 import "./index.css";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
-import Journal from "./pages/Journal";
-import Contact from "./pages/Contact";
-import CouplePage from "./pages/CouplePage";
-import JournalPage from "./pages/JournalPage";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import NotFound from "./components/layout/PathNotFound";
 import Layout from "./components/layout/Layout";
 
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const Journal = lazy(() => import("./pages/Journal"));
+const Contact = lazy(() => import("./pages/Contact"));
+const CouplePage = lazy(() => import("./pages/CouplePage"));
+const JournalPage = lazy(() => import("./pages/JournalPage"));
+
 function App() {
   return (
     <>
-      
+
 
       <div>
         <ScrollToTop></ScrollToTop>
-        <Routes>
-          <Route element={<Layout></Layout>}>
-            <Route path="/" element={<Home></Home>} />
-            <Route path="/about" element={<About></About>} />
-            <Route path="/services" element={<Services></Services>} />
-            <Route path="/portfolio" element={<Portfolio></Portfolio>} />
-            <Route path="/journal" element={<Journal></Journal>} />
-            <Route path="/contact" element={<Contact></Contact>} />
-            <Route path="/portfolio/:slug" element={<CouplePage />} />
-            <Route path="/journal/:url" element={<JournalPage></JournalPage>} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-       
+        <Suspense fallback={<div style={{ minHeight: "100vh", background: "#faf9f7" }} />}>
+          <Routes>
+            <Route element={<Layout></Layout>}>
+              <Route path="/" element={<Home></Home>} />
+              <Route path="/about" element={<About></About>} />
+              <Route path="/services" element={<Services></Services>} />
+              <Route path="/portfolio" element={<Portfolio></Portfolio>} />
+              <Route path="/journal" element={<Journal></Journal>} />
+              <Route path="/contact" element={<Contact></Contact>} />
+              <Route path="/portfolio/:slug" element={<CouplePage />} />
+              <Route path="/journal/:url" element={<JournalPage></JournalPage>} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+
       </div>
       {/* footer */}
-      
+
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import ServiceCard, { packages } from "../components/ui/ServiceCard";
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 
 const Services = () => {
   const services = [
@@ -9,56 +9,56 @@ const Services = () => {
       title: "Bridal Assistance",
       description:
         "Personal styling, fittings, and day-of attention from a dedicated lead.",
-      image: "/images/brideholdingwhiteflowers.jpg",
+      image: "/images/brideholdingwhiteflowers.webp",
     },
     {
       id: "02",
       title: "Catering Curation",
       description:
         "Menus designed with Michelin-trained chefs and seasonal sourcing.",
-      image: "/images/brideholdinpinkflowers.jpg",
+      image: "/images/brideholdinpinkflowers.webp",
     },
     {
       id: "03",
       title: "Decor & Floral Styling",
       description:
         "Bespoke design direction with editorial florals and tactile textures.",
-      image: "/images/CandlesOnTable.jpg",
+      image: "/images/CandlesOnTable.webp",
     },
     {
       id: "04",
       title: "Destination Weddings",
       description:
         "Curated celebrations in Europe's most romantic estates and coastlines.",
-      image: "/images/SunTyndalThroughDecor.jpg",
+      image: "/images/SunTyndalThroughDecor.webp",
     },
     {
       id: "05",
       title: "Entertainment & Music",
       description:
         "From string quartets to headline DJs — every cue, perfectly timed.",
-      image: "/images/acoupledancing.jpg",
+      image: "/images/acoupledancing.webp",
     },
     {
       id: "06",
       title: "Full Wedding Planning",
       description:
         "End-to-end orchestration of every detail, from concept to last dance.",
-      image: "/images/GateWithWhiteFlowers.jpg",
+      image: "/images/GateWithWhiteFlowers.webp",
     },
     {
       id: "07",
       title: "Photography Coordination",
       description:
         "We pair you with photographers whose eye matches your story.",
-      image: "/images/bridenearsea.jpg",
+      image: "/images/bridenearsea.webp",
     },
     {
       id: "08",
       title: "Venue Management",
       description:
         "Sourcing, negotiation, and stewardship of unforgettable settings.",
-      image: "/images/PeopleHavingAFeast.jpg",
+      image: "/images/PeopleHavingAFeast.webp",
     },
   ];
   return (
@@ -69,11 +69,7 @@ const Services = () => {
       </Helmet>
       {/* hero */}
       <section className="pt-40 pb-24 bg-ivory ">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div
@@ -94,18 +90,14 @@ const Services = () => {
               </span>
             </h1>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* services */}
       <section className="bg-ivory pb-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           {services.map((service, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 100, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <FadeInUp 
               key={service.id}
             >
               <div
@@ -141,18 +133,14 @@ const Services = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </FadeInUp>
           ))}
         </div>
       </section>
 
       {/* service cards */}
       <section className="bg-champagne/60 py-32">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div
@@ -181,7 +169,7 @@ const Services = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
     </div>
   );

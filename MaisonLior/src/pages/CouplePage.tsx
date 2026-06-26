@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import couples from "../data/couples.json";
 import Hero from "../components/sections/Hero";
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 
 const CouplePage = () => {
   const { slug } = useParams();
@@ -133,11 +133,7 @@ const CouplePage = () => {
                 { title: string; description: string },
               ][]
             ).map(([time, details]) => (
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+              <FadeInUp 
                 key={time}
                 style={{ opacity: 1, transform: "none" }}
               >
@@ -156,7 +152,7 @@ const CouplePage = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </FadeInUp>
             ))}
           </div>
         </div>
@@ -177,25 +173,22 @@ const CouplePage = () => {
               const isLarge = index === 0 || index === 5;
 
               return (
-                <motion.button
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.2 * index + 1 }}
-                  viewport={{ once: true }}
-                  key={index}
-                  aria-label="Open image"
-                  className={`relative overflow-hidden cursor-zoom-in group ${
-                    isLarge ? "md:col-span-2 aspect-[16/10]" : "aspect-[4/5]"
-                  }`}
-                >
-                  <img
-                    src={src}
-                    alt={`Gallery ${index + 1}`}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                <FadeInUp key={index}>
+                  <button
+                    aria-label="Open image"
+                    className={`relative overflow-hidden cursor-zoom-in group w-full h-full ${
+                      isLarge ? "md:col-span-2 aspect-[16/10]" : "aspect-[4/5]"
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt={`Gallery ${index + 1}`}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
 
-                  <span className="absolute inset-0 bg-espresso/0 group-hover:bg-espresso/15 transition-colors duration-300" />
-                </motion.button>
+                    <span className="absolute inset-0 bg-espresso/0 group-hover:bg-espresso/15 transition-colors duration-300" />
+                  </button>
+                </FadeInUp>
               );
             })}
           </div>
@@ -205,11 +198,7 @@ const CouplePage = () => {
       {/* review */}
       <section className="bg-espresso text-ivory py-32">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <FadeInUp 
             style={{ opacity: 1, transform: "none" }}
           >
             <p className="font-heading text-3xl md:text-4xl italic leading-[1.3]">
@@ -219,7 +208,7 @@ const CouplePage = () => {
             </p>
 
             <p className="mt-10 eyebrow text-champagne">— {couple.couples}</p>
-          </motion.div>
+          </FadeInUp>
         </div>
       </section>
 

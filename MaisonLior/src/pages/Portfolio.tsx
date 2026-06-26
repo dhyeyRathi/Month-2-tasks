@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 import { Helmet } from "react-helmet-async";
 import couplesData from "../data/couples.json";
 import Card from "../components/ui/Card";
@@ -29,11 +29,7 @@ const Portfolio = () => {
         <meta name="description" content="Portfolio of our past work." />
       </Helmet>
       <section className="pt-40 pb-16 bg-ivory font-light">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div style={{ opacity: 1, transform: "none" }}>
@@ -48,7 +44,7 @@ const Portfolio = () => {
               </span>
             </h1>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
 
       {/* cards and routings */}
@@ -56,11 +52,8 @@ const Portfolio = () => {
       {/* Portfolio Grid */}
       <section className="bg-ivory pb-32">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
+          <FadeInUp 
+            >
             <div className="mt-16 flex flex-wrap gap-3 border-t border-border pt-8">
               {filters.map((filter) => (
                 <button
@@ -79,7 +72,7 @@ const Portfolio = () => {
                 </button>
               ))}
             </div>
-          </motion.div>
+          </FadeInUp>
 
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="space-y-20">

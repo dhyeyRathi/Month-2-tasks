@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import journalData from "../data/journals.json";
-import { motion } from "motion/react";
+import FadeInUp from "../components/ui/FadeInUp";
 import LeaveThought from "../components/sections/LeaveThought";
 import { Helmet } from "react-helmet-async";
 
@@ -29,12 +29,8 @@ const JournalPage = () => {
       <article className="bg-ivory pt-40 pb-24 font-light">
         {/* Header */}
         <header className="mx-auto max-w-3xl px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 100, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <FadeInUp 
+            >
             <Link
               to="/journal"
               onClick={handleClick}
@@ -54,15 +50,11 @@ const JournalPage = () => {
             <p className="mt-8 font-body text-lg text-muted-foreground italic font-serif">
               {journal.description}
             </p>
-          </motion.div>
+          </FadeInUp>
         </header>
 
         {/* Hero Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mt-16"
         >
           <div className="mx-auto max-w-[1100px] px-6 aspect-[16/9]">
@@ -72,7 +64,7 @@ const JournalPage = () => {
               className="h-full w-full object-cover"
             />
           </div>
-        </motion.div>
+        </FadeInUp>
 
         {/* Hardcoded Article Content */}
         <div className="mx-auto max-w-2xl px-6 mt-20 text-lg leading-[1.85] text-foreground/85 space-y-7 font-heading">
@@ -115,11 +107,7 @@ const JournalPage = () => {
         </div>
 
         {/* Share Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 100, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+        <FadeInUp 
           className="mx-auto max-w-2xl px-6"
         >
           <div className="pt-12 border-t border-border mt-16">
@@ -195,17 +183,13 @@ const JournalPage = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </FadeInUp>
       </article>
       {/* cta */}
       <LeaveThought></LeaveThought>
 
       <section className="bg-ivory py-24">
-        <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 100, y: 0 }}
-                      transition={{ duration: 0.8}}
-                      viewport={{ once: true }}
+        <FadeInUp 
                       className="mx-auto max-w-[1400px] px-6 lg:px-12">
           <div>
             <p className="eyebrow">— Continue reading</p>
@@ -220,7 +204,7 @@ const JournalPage = () => {
               >
                 <div className="aspect-[4/5] image-zoom overflow-hidden">
                   <img
-                    src="/images/SunTyndalThroughDecor.jpg"
+                    src="/images/SunTyndalThroughDecor.webp"
                     alt="Planning a Destination Wedding Without Losing Yourself"
                     className="h-full w-full object-cover  hover:scale-105 transition-all duration-800 ease-in-out"
                   />
@@ -242,7 +226,7 @@ const JournalPage = () => {
               >
                 <div className="aspect-[4/5] image-zoom overflow-hidden">
                   <img
-                    src="/images/brideholdingwhiteflowers.jpg"
+                    src="/images/brideholdingwhiteflowers.webp"
                     alt="A Bride's Letter to Herself the Morning Of"
                     className="h-full w-full object-cover  hover:scale-105 transition-all duration-800 ease-in-out"
                   />
@@ -264,7 +248,7 @@ const JournalPage = () => {
               >
                 <div className="aspect-[4/5] image-zoom overflow-hidden">
                   <img
-                    src="/images/PeopleHavingAFeast.jpg"
+                    src="/images/PeopleHavingAFeast.webp"
                     alt="The Rise of the Multi-Day Celebration"
                     className="h-full w-full object-cover hover:scale-105 transition-all duration-800 ease-in-out"
                   />
@@ -278,7 +262,7 @@ const JournalPage = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </FadeInUp>
       </section>
     </div>
   );

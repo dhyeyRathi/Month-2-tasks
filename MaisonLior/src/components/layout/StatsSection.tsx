@@ -1,6 +1,3 @@
-"use client";
-
-import { animate, useInView, easeOut } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 
 type CounterProps = {
@@ -8,29 +5,46 @@ type CounterProps = {
   isInView: boolean;
 };
 
+// Native easeOut — replaces motion's easeOut, zero bundle cost
+function easeOut(t: number) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
 const Counter = ({ target, isInView }: CounterProps) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!isInView) return;
-      const controls = animate(0 as number, target, { duration: 2, ease: easeOut,
-        onUpdate(value) {
-          setCount(Math.floor(value));
-        },
-      });
-    
+    const duration = 2000; // ms
+    const start = performance.now();
 
-    return () => controls.stop();
-  }, [isInView]);
+    const raf = requestAnimationFrame(function tick(now) {
+      const elapsed = Math.min((now - start) / duration, 1);
+      setCount(Math.floor(easeOut(elapsed) * target));
+      if (elapsed < 1) requestAnimationFrame(tick);
+    });
+
+    return () => cancelAnimationFrame(raf);
+  }, [isInView, target]);
 
   return <span>{count}</span>;
 };
 
 const StatsSection = () => {
-  const reference = useRef(null);
-  const isInView = useInView(reference, {
-    once: true,
-  });
+  const reference = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = reference.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsInView(true); observer.disconnect(); } },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-espresso text-ivory py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12" ref={reference}>
