@@ -1,7 +1,7 @@
-
 import journals from "../data/journals.json";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 
 const Journal = () => {
   const handleClick = () => {
@@ -9,6 +9,13 @@ const Journal = () => {
   };
   return (
     <div className="text-light">
+      <Helmet>
+        <title>Journal | Maison Lior</title>
+        <meta
+          name="description"
+          content="Read stories from beautiful celebrations, intimate moments, and unforgettable wedding experiences documented by Maison Lior."
+        />
+      </Helmet>
       {/* header */}
       <section className="pt-40 pb-16 bg-ivory">
         <motion.div
@@ -104,12 +111,19 @@ const Journal = () => {
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16"
         >
           {journals.slice(1).map((journal, index) => (
-            <motion.div  initial={{ opacity: 0, y: 30 }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 100, y: 0 }}
               transition={{ duration: 0.3 * (index + 1) }}
               viewport={{ once: true }}
-              key={journal.id} style={{ opacity: 1, transform: "none" }}>
-              <Link className="group block"  onClick={handleClick} to={`/journal/${journal.url}`}>
+              key={journal.id}
+              style={{ opacity: 1, transform: "none" }}
+            >
+              <Link
+                className="group block"
+                onClick={handleClick}
+                to={`/journal/${journal.url}`}
+              >
                 <div className="aspect-[4/5] image-zoom overflow-hidden">
                   <img
                     alt={journal.title}

@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import journalData from "../data/journals.json";
 import { motion } from "motion/react";
 import LeaveThought from "../components/sections/LeaveThought";
+import { Helmet } from "react-helmet-async";
+
 
 const JournalPage = () => {
   const { url } = useParams();
@@ -17,6 +19,13 @@ const JournalPage = () => {
   };
   return (
     <div>
+      <Helmet>
+  <title>{journal ? `${journal.title} | Maison Lior` : "Maison Lior"}</title>
+  <meta
+    name="description"
+    content={`Explore ${journal.title}, a beautiful wedding story captured by Maison Lior as ${journal.category}.`}
+  />
+</Helmet>
       <article className="bg-ivory pt-40 pb-24 font-light">
         {/* Header */}
         <header className="mx-auto max-w-3xl px-6 text-center">

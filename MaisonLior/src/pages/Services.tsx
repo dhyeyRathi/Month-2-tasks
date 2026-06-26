@@ -1,4 +1,4 @@
-  
+import { Helmet } from "react-helmet-async";
 import ServiceCard, { packages } from "../components/ui/ServiceCard";
 import { motion } from "motion/react";
 
@@ -63,6 +63,10 @@ const Services = () => {
   ];
   return (
     <div className="font-light">
+      <Helmet>
+        <title>Services | Maison Lior</title>
+        <meta name="description" content="Services we provide to plan and enhance your happy moments" />
+      </Helmet>
       {/* hero */}
       <section className="pt-40 pb-24 bg-ivory ">
         <motion.div

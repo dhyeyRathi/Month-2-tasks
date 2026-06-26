@@ -1,5 +1,8 @@
 import  { useState } from "react";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
+
+
 const faqData = [
   {
     question: "How far in advance should we book?",
@@ -35,6 +38,13 @@ const Contact = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <div className="font-light">
+      <Helmet>
+        <title>Contact Us | Maison Lior</title>
+        <meta
+          name="description"
+          content="Contact us for Queries, Quotes and Bookings."
+        />
+      </Helmet>
       {/* header */}
       <section className="pt-40 pb-20 bg-ivory">
         <motion.div

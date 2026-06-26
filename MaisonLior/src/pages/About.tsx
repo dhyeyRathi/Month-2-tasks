@@ -1,6 +1,7 @@
 
 import { motion } from "motion/react";
 import StatsSection from "../components/layout/StatsSection";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const team = [
@@ -28,6 +29,10 @@ const About = () => {
   ];
   return (
     <div className="bg-ivory font-light">
+      <Helmet>
+        <title>Atelier | Maison Lior</title>
+        <meta name="description" content="Know more about us and our team." />
+      </Helmet>
       {/* title */}
       <section className="relative pt-40 pb-32 font-light bg-ivory">
         <motion.div

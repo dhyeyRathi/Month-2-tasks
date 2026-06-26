@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-
+import { Helmet } from "react-helmet-async";
 import couplesData from "../data/couples.json";
 import Card from "../components/ui/Card";
 
 const Portfolio = () => {
   const [selectedFilter, setSelectedFilter] = useState("All");
 
-  const filters = ["All", ...Array.from(new Set(couplesData.map((item) => item.type))).sort(),];
+  const filters = [
+    "All",
+    ...Array.from(new Set(couplesData.map((item) => item.type))).sort(),
+  ];
 
   const filteredData =
     selectedFilter === "All"
@@ -16,11 +19,15 @@ const Portfolio = () => {
 
   const middle = Math.ceil(filteredData.length / 2);
 
-const leftColumn = filteredData.slice(0, middle);
-const rightColumn = filteredData.slice(middle);
+  const leftColumn = filteredData.slice(0, middle);
+  const rightColumn = filteredData.slice(middle);
 
   return (
     <div className="bg-ivory font-light">
+      <Helmet>
+        <title>Our Portfolio | Maison Lior</title>
+        <meta name="description" content="Portfolio of our past work." />
+      </Helmet>
       <section className="pt-40 pb-16 bg-ivory font-light">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,13 +84,23 @@ const rightColumn = filteredData.slice(middle);
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <div className="space-y-20">
               {leftColumn.map((couple, index) => (
-                <Card key={couple.id} couple={couple} index={index} variant="portfolio"/>
+                <Card
+                  key={couple.id}
+                  couple={couple}
+                  index={index}
+                  variant="portfolio"
+                />
               ))}
             </div>
 
             <div className="space-y-20 md:mt-24">
               {rightColumn.map((couple, index) => (
-                <Card key={couple.id} couple={couple} index={index} variant="portfolio"/>
+                <Card
+                  key={couple.id}
+                  couple={couple}
+                  index={index}
+                  variant="portfolio"
+                />
               ))}
             </div>
           </div>

@@ -1,4 +1,4 @@
-
+import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import couples from "../data/couples.json";
 import Hero from "../components/sections/Hero";
@@ -21,6 +21,12 @@ const CouplePage = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>
+          {couple ? `${couple.couples} | Maison Lior` : "Maison Lior"}
+        </title>
+        <meta name="description" content={`${couple.type} * ${couple.location} * ${couple.year}`} />
+      </Helmet>
       {/* hero */}
       <Hero variant="couple" img={couple?.coverImage}>
         <div className="relative z-10 mx-auto max-w-[1400px] h-full px-6 lg:px-12 flex flex-col justify-end pb-20">
@@ -121,7 +127,12 @@ const CouplePage = () => {
           </div>
 
           <div className="mt-20 max-w-3xl mx-auto">
-            {(Object.entries(couple.timeline) as [string, { title: string; description: string }][]).map(([time, details]) => (
+            {(
+              Object.entries(couple.timeline) as [
+                string,
+                { title: string; description: string },
+              ][]
+            ).map(([time, details]) => (
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -215,10 +226,9 @@ const CouplePage = () => {
       {/* next section */}
       <section className="bg-ivory py-24 border-t border-border">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          
           {previousCouple ? (
             <Link
-            onClick={handleClick}
+              onClick={handleClick}
               className="group text-left"
               to={`/portfolio/${previousCouple.slug}`}
             >
@@ -244,7 +254,6 @@ const CouplePage = () => {
 
                 {previousCouple.couples}
               </p>
-            
             </Link>
           ) : (
             <div />
@@ -252,17 +261,16 @@ const CouplePage = () => {
 
           {/* Back to Portfolio */}
           <Link
-          onClick={handleClick}
+            onClick={handleClick}
             className="eyebrow inline-flex items-center gap-2 hover:text-gold transition-colors"
             to="/portfolio"
           >
             All weddings
           </Link>
 
-         
           {nextCouple ? (
             <Link
-            onClick={handleClick}
+              onClick={handleClick}
               className="group text-right"
               to={`/portfolio/${nextCouple.slug}`}
             >
