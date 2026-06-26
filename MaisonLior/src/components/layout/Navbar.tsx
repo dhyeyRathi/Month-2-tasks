@@ -90,8 +90,8 @@ const Navbar = () => {
           {/* smaller screens and hamburger */}
 
           <div className=" lg:hidden py-2 w-10 h-10 flex justify-center items-center">
-            <button onClick={()=> setHamburgerActive(true)}>
-                <img src={hamburger} className="p-0"/>
+            <button onClick={()=> setHamburgerActive(true)} aria-label="Hamburger-menu-button">
+                <img src={hamburger} className="p-0" alt="Hamburger menu"/>
             </button>
             
           </div>
@@ -105,8 +105,8 @@ const Navbar = () => {
 
         <div className="flex items-center justify-between px-6 py-6 ">
           <span className="font-heading text-2xl">Maison Lior</span>
-          <button aria-label="Close menu" onClick={()=>setHamburgerActive(false)}>
-            <img src={cross} />
+          <button aria-label="Close hamburger menu" onClick={()=>setHamburgerActive(false)}>
+            <img src={cross} alt="close hamburger menu"/>
           </button>
         </div>
 

@@ -129,7 +129,7 @@ export default function Footer() {
                 <div key={index} className="aspect-square overflow-hidden">
                   <img
                     src={img}
-                    alt="Maison Lior"
+                    alt="Maison Lior Images"
                     className="h-full w-full object-cover opacity-80 hover:opacity-100 transition-opacity"
                   />
                 </div>

@@ -43,7 +43,7 @@ const Home = () => {
             <Button className="inline-flex items-center gap-3 px-8 py-4 bg-ivory text-foreground text-xs tracking-[0.25em] uppercase hover:bg-champagne transition-colors">
               <NavLink to="/contact">Begin your story </NavLink>
 
-              <img src={arrowRight} className="w-4 h-4" />
+              <img src={arrowRight} className="w-4 h-4" alt="Right arrow"/>
             </Button>
             <a
               className="text-ivory/90 text-xs tracking-[0.25em] uppercase border-b border-ivory/40 pb-1 hover:text-champagne hover:border-champagne transition-colors"
@@ -311,7 +311,7 @@ const Home = () => {
       <section className="relative py-40 overflow-hidden">
         <motion.div className="absolute inset-0">
           <img
-            src="https://cdn.sanity.io/images/xfzlvuer/production/2dfa20a0c53cdee61d35245d5b495a9fd648d85d-1280x1600.jpg?w=1600&q=80&auto=format"
+            src="/images/CandlesOnTable.jpg"
             alt="Wedding tablescape"
             className="h-full w-full object-cover"
             loading="lazy"

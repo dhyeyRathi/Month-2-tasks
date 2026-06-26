@@ -20,6 +20,7 @@ const Hero = ({variant, img, children}: HeroProps) => {
         initial={{ scale: 1.05, opacity: 0.8 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, ease: easeInOut }}
+        alt="Hero Image"
       />
       <div className="absolute -z-10 inset-0 bg-gradient-hero" />
 
