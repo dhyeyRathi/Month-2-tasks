@@ -1,0 +1,61 @@
+# Maison Lior - Project Context for LLMs
+
+This document provides a plain English description of the Maison Lior project to help Large Language Models (LLMs) understand the brand, its offerings, and the technical structure of its website.
+
+## Project Overview
+Maison Lior is a luxury, editorial wedding atelier that specializes in designing intimate and cinematic celebrations. The brand focuses on high-end, bespoke design, typically catering to destination weddings across Europe and primarily based out of Paris. The core keywords associated with this project include wedding planner, event management, editorial wedding atelier, intimate cinematic celebrations, destination weddings, bespoke design, luxury weddings, Europe, Paris, styling, curation, and orchestration.
+
+## Contact Information
+- Studio Address: 14 Rue de Sévigné, 75004 Paris
+- Telephone: +33 1 42 78 00 00
+- Email: hello@maisonlior.com
+- Social Media: @maisonlior
+
+## Services Offered
+Maison Lior offers a comprehensive suite of eight core services to their clients. These include:
+- Bridal Assistance: Providing personal styling, fittings, and day-of attention from a dedicated lead.
+- Catering Curation: Designing menus in collaboration with Michelin-trained chefs using seasonal sourcing.
+- Decor & Floral Styling: Offering bespoke design direction with editorial florals and tactile textures.
+- Destination Weddings: Curating celebrations in some of Europe's most romantic estates and coastlines.
+- Entertainment & Music: Organizing everything from string quartets to headline DJs with perfectly timed cues.
+- Full Wedding Planning: Covering end-to-end orchestration of every detail from the initial concept to the last dance.
+- Photography Coordination: Pairing clients with photographers whose artistic eye matches their unique story.
+- Venue Management: Handling the sourcing, negotiation, and stewardship of unforgettable settings.
+
+## Application Routing Structure
+The frontend application is built as a single-page application (using React and Vite) with several specific routes defining the user experience:
+- / - The Home route serves as the landing page, introducing Maison Lior's brand, aesthetics, and a high-level overview.
+- /about - The About route provides deeper details about the company's philosophy, design approach, and the team behind the scenes.
+- /services - The Services route lists the comprehensive wedding planning and design services in detail.
+- /portfolio - The Portfolio route features a gallery showcasing past weddings and editorial work to inspire potential clients.
+- /portfolio/:slug - The specific Couple Page is a dynamic route dedicated to sharing a specific couple's detailed wedding story and gallery.
+- /journal - The Journal route acts as a blog containing articles, inspiration, and news related to the wedding industry.
+- /journal/:url - The specific Journal Article is a dynamic route for viewing an individual journal article or blog post.
+- /contact - The Contact route includes an enquiry form, all contact details, a map of the studio location, and a list of frequently asked questions.
+
+## Important Content
+Portfolio and journal are the most important content sections.
+
+## Portfolio Content
+Portfolio showcases real client work, photography style, composition quality, and storytelling approach.
+
+## Journal Content
+Journal includes:
+- Wedding planning guides
+- Photography tips
+- Couple stories
+- Styling inspiration
+- Venue recommendations
+
+## Brand Style
+Luxury, elegant, emotional, refined, timeless.
+
+## Content Freshness
+Journal is updated regularly with new content.
+Portfolio is updated as new work is completed.
+
+## Ignore
+Admin pages
+Preview pages
+Development routes
+Internal tools
