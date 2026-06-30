@@ -46,7 +46,6 @@ const generateSchema = (type: string, data?: any) => {
     case "about":
       return {
         "@context": "https://schema.org",
-        "@type": "Organization",
         ...organization,
         description:
           "Maison Lior is a luxury wedding atelier crafting timeless and cinematic celebrations.",
