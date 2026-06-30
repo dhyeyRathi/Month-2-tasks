@@ -117,7 +117,6 @@ const generateSchema = (type: string, data?: any) => {
     case "contact":
       return {
         "@context": "https://schema.org",
-        "@type": "Organization",
         ...organization,
         contactPoint: {
           "@type": "ContactPoint",
