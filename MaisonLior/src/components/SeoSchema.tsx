@@ -27,120 +27,159 @@ const organization = {
   },
 };
 
+const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: item.url,
+  })),
+});
+
 const generateSchema = (type: string, data?: any) => {
   switch (type) {
     case "home":
-      return {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "@id": `${BASE_URL}/#service`,
-        name: "Maison Lior",
-        url: BASE_URL,
-        description:
-          "Luxury wedding photography and films capturing timeless love stories.",
-        serviceType: ["Wedding Photography", "Wedding Films"],
-        areaServed: "India",
-        provider: organization,
-      };
+      return [
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "@id": `${BASE_URL}/#service`,
+          name: "Maison Lior",
+          url: BASE_URL,
+          description:
+            "Luxury wedding photography and films capturing timeless love stories.",
+          serviceType: ["Wedding Photography", "Wedding Films"],
+          areaServed: "India",
+        },
+      ];
 
     case "about":
-      return {
-        "@context": "https://schema.org",
-        ...organization,
-        description:
-          "Maison Lior is a luxury wedding atelier crafting timeless and cinematic celebrations.",
-      };
+      return [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Maison Lior",
+          url: BASE_URL,
+        },
+        breadcrumbSchema([
+          { name: "Home", url: BASE_URL },
+          { name: "About", url: `${BASE_URL}/about` },
+        ]),
+      ];
 
     case "services":
-      return {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": `${BASE_URL}/services#service`,
-        serviceType: ["Wedding Photography", "Wedding Films"],
-        provider: organization,
-        areaServed: "India",
-        url: `${BASE_URL}/services`,
-      };
+      return [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "Wedding Photography",
+          provider: {
+            "@type": "Organization",
+            name: "Maison Lior",
+          },
+          areaServed: "India",
+        },
+        breadcrumbSchema([
+          { name: "Home", url: BASE_URL },
+          { name: "Services", url: `${BASE_URL}/services` },
+        ]),
+      ];
 
     case "portfolio":
-      return {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "@id": `${BASE_URL}/portfolio`,
-        name: "Portfolio",
-        url: `${BASE_URL}/portfolio`,
-        description: "Wedding stories captured by Maison Lior.",
-      };
-
-    case "couple":
-      return {
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "@id": `${BASE_URL}/portfolio/${data?.slug}`,
-        name: data?.title || "Wedding Story",
-        description: `${data?.title || "Wedding"} story by Maison Lior`,
-        url: `${BASE_URL}/portfolio/${data?.slug}`,
-        image: data?.coverImage || LOGO_URL,
-        creator: organization,
-      };
+      return [
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Portfolio",
+          url: `${BASE_URL}/portfolio`,
+        },
+        breadcrumbSchema([
+          { name: "Home", url: BASE_URL },
+          { name: "Portfolio", url: `${BASE_URL}/portfolio` },
+        ]),
+      ];
 
     case "journal":
-      return {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "@id": `${BASE_URL}/journal`,
-        name: "Maison Lior Journal",
-        url: `${BASE_URL}/journal`,
-        description:
-          "Wedding stories, inspiration, and photography insights.",
-        publisher: organization,
-      };
+      return [
+        {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Maison Lior Journal",
+          url: `${BASE_URL}/journal`,
+        },
+        breadcrumbSchema([
+          { name: "Home", url: BASE_URL },
+          { name: "Journal", url: `${BASE_URL}/journal` },
+        ]),
+      ];
 
     case "article":
-      return {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "@id": `${BASE_URL}/journal/${data?.url}`,
-        headline: data?.title || "Journal Article",
-        description: data?.description || "",
-        image: data?.image || LOGO_URL,
-        datePublished: data?.datePublished || "",
-        author: organization,
-        publisher: organization,
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": `${BASE_URL}/journal/${data?.url}`,
+      return [
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: data?.title || "Journal Article",
+          description: data?.description || "",
+          image: data?.image || `${BASE_URL}/og-image.jpg`,
+          datePublished: data?.datePublished || "",
+          author: {
+            "@type": "Organization",
+            name: "Maison Lior",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Maison Lior",
+            logo: {
+              "@type": "ImageObject",
+              url: `${BASE_URL}/og-image.jpg`,
+            },
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${BASE_URL}/journal/${data?.url}`,
+          },
         },
-      };
+        breadcrumbSchema([
+          { name: "Home", url: BASE_URL },
+          { name: "Journal", url: `${BASE_URL}/journal` },
+          { name: data?.title || "Article", url: `${BASE_URL}/journal/${data?.url}` },
+        ]),
+      ];
 
     case "contact":
-      return {
-        "@context": "https://schema.org",
-        ...organization,
-        contactPoint: {
-          "@type": "ContactPoint",
-          contactType: "customer service",
-          url: `${BASE_URL}/contact`,
+      return [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Maison Lior",
+          url: BASE_URL,
         },
-      };
+        breadcrumbSchema([
+          { name: "Home", url: BASE_URL },
+          { name: "Contact", url: `${BASE_URL}/contact` },
+        ]),
+      ];
 
     default:
       return null;
   }
 };
-
 const SeoSchema = ({ type, data }: Props) => {
-  const schema = generateSchema(type, data);
+  const schemas = generateSchema(type, data);
 
-  if (!schema) return null;
+if (!schemas) return null;
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">
+return (
+  <Helmet>
+    {schemas.map((schema, index) => (
+      <script key={index} type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </Helmet>
-  );
+    ))}
+  </Helmet>
+);
 };
 
 export default SeoSchema;
