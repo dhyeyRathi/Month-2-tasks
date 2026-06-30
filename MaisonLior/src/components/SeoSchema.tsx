@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 const BASE_URL = "https://maisonlior-dhyey.vercel.app";
-const LOGO_URL = `${BASE_URL}/og-image.jpg`;
+// const LOGO_URL = `${BASE_URL}/og-image.jpg`;
 
 type Props = {
   type:
