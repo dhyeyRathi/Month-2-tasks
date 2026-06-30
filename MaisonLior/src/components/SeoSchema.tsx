@@ -16,16 +16,16 @@ type Props = {
   data?: any;
 };
 
-const organization = {
-  "@type": "Organization",
-  "@id": `${BASE_URL}/#organization`,
-  name: "Maison Lior",
-  url: BASE_URL,
-  logo: {
-    "@type": "ImageObject",
-    url: LOGO_URL,
-  },
-};
+// const organization = {
+//   "@type": "Organization",
+//   "@id": `${BASE_URL}/#organization`,
+//   name: "Maison Lior",
+//   url: BASE_URL,
+//   logo: {
+//     "@type": "ImageObject",
+//     url: LOGO_URL,
+//   },
+// };
 
 const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
   "@context": "https://schema.org",
