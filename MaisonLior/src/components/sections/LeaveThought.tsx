@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFadeInUp } from "../ui/FadeInUp";
 
 const LeaveThought = () => {
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({ name: "", message: "" });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    let hasError = false;
+    const newErrors = { name: "", message: "" };
+
+    if (!name.trim()) {
+      newErrors.name = "Field is empty";
+      hasError = true;
+    }
+    if (!message.trim()) {
+      newErrors.message = "Field is empty";
+      hasError = true;
+    }
+
+    setErrors(newErrors);
+
+    if (!hasError) {
+      console.log("Form submitted");
+    }
   };
 
   const { ref, visible } = useFadeInUp();
@@ -31,16 +51,28 @@ const LeaveThought = () => {
               <input
                 type="text"
                 placeholder="Your name"
-                className="w-full bg-transparent border-b py-3 focus:outline-none transition-colors font-serif text-lg italic placeholder:not-italic placeholder:font-sans placeholder:text-base placeholder:text-foreground/40 border-foreground/30 focus:border-gold"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (errors.name) setErrors({ ...errors, name: "" });
+                }}
+                className={`w-full bg-transparent border-b py-3 focus:outline-none transition-colors font-serif text-lg italic placeholder:not-italic placeholder:font-sans placeholder:text-base placeholder:text-foreground/40 ${errors.name ? "border-destructive text-destructive" : "border-foreground/30 focus:border-gold"}`}
               />
+              {errors.name && <p className="text-destructive text-sm mt-2">{errors.name}</p>}
             </div>
 
             <div>
               <textarea
                 rows={4}
                 placeholder="Your message"
-                className="w-full bg-transparent border-b py-3 focus:outline-none transition-colors resize-none font-serif text-lg italic placeholder:not-italic placeholder:font-sans placeholder:text-sm placeholder:text-foreground/40 border-foreground/30 focus:border-gold"
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  if (errors.message) setErrors({ ...errors, message: "" });
+                }}
+                className={`w-full bg-transparent border-b py-3 focus:outline-none transition-colors resize-none font-serif text-lg italic placeholder:not-italic placeholder:font-sans placeholder:text-sm placeholder:text-foreground/40 ${errors.message ? "border-destructive text-destructive" : "border-foreground/30 focus:border-gold"}`}
               />
+              {errors.message && <p className="text-destructive text-sm mt-2">{errors.message}</p>}
             </div>
 
             <button
