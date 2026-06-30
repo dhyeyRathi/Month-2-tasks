@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import couples from "../data/couples.json";
 import Hero from "../components/sections/Hero";
 import FadeInUp from "../components/ui/FadeInUp";
@@ -7,6 +8,7 @@ import SeoSchema from "../components/SeoSchema";
 
 const CouplePage = () => {
   const { slug } = useParams();
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const couple: any = couples.find((item) => item.slug === slug);
 
@@ -20,6 +22,30 @@ const CouplePage = () => {
   const handleClick = () => {
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    if (!couple) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (lightboxIndex === null) return;
+      if (e.key === "Escape") setLightboxIndex(null);
+      if (e.key === "ArrowRight") setLightboxIndex((prev) => (prev === null ? null : (prev + 1) % couple.images.length));
+      if (e.key === "ArrowLeft") setLightboxIndex((prev) => (prev === null ? null : (prev - 1 + couple.images.length) % couple.images.length));
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxIndex, couple]);
+
+  useEffect(() => {
+    if (lightboxIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [lightboxIndex]);
+
   return (
     <div>
       <SeoSchema type="couple" data={couple} />
@@ -135,7 +161,7 @@ const CouplePage = () => {
                 { title: string; description: string },
               ][]
             ).map(([time, details]) => (
-              <FadeInUp 
+              <FadeInUp
                 key={time}
                 style={{ opacity: 1, transform: "none" }}
               >
@@ -175,11 +201,12 @@ const CouplePage = () => {
               const isLarge = index === 0 || index === 5;
 
               return (
-                <FadeInUp key={index}>
+                <FadeInUp key={index} className={isLarge ? "md:col-span-2" : ""}>
                   <button
+                    onClick={() => setLightboxIndex(index)}
                     aria-label="Open image"
                     className={`relative overflow-hidden cursor-zoom-in group w-full h-full ${
-                      isLarge ? "md:col-span-2 aspect-[16/10]" : "aspect-[4/5]"
+                      isLarge ? "aspect-[16/10]" : "aspect-[4/5]"
                     }`}
                   >
                     <img
@@ -200,7 +227,7 @@ const CouplePage = () => {
       {/* review */}
       <section className="bg-espresso text-ivory py-32">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <FadeInUp 
+          <FadeInUp
             style={{ opacity: 1, transform: "none" }}
           >
             <p className="font-heading text-3xl md:text-4xl italic leading-[1.3]">
@@ -293,6 +320,57 @@ const CouplePage = () => {
           )}
         </div>
       </section>
+
+      {/* Lightbox Overlay */}
+      {lightboxIndex !== null && couple && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm">
+          <button
+            onClick={() => setLightboxIndex(null)}
+            className="absolute top-6 right-6 z-50 text-white/70 hover:text-white transition-colors cursor-pointer"
+            aria-label="Close lightbox"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+          
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex((prev) => (prev === null ? null : (prev - 1 + couple.images.length) % couple.images.length));
+            }}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 text-white/70 hover:text-white transition-colors p-2 md:p-4 cursor-pointer"
+            aria-label="Previous image"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+
+          <div 
+            className="w-full h-full flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+            onClick={() => setLightboxIndex(null)}
+          >
+            <img
+              src={couple.images[lightboxIndex]}
+              alt={`Gallery image ${lightboxIndex + 1}`}
+              className="max-h-full max-w-full object-contain select-none"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex((prev) => (prev === null ? null : (prev + 1) % couple.images.length));
+            }}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 text-white/70 hover:text-white transition-colors p-2 md:p-4 cursor-pointer"
+            aria-label="Next image"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 font-body text-sm tracking-widest">
+            {lightboxIndex + 1} / {couple.images.length}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
