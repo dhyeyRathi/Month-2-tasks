@@ -5,6 +5,7 @@ import couples from "../data/couples.json";
 import Hero from "../components/sections/Hero";
 import FadeInUp from "../components/ui/FadeInUp";
 import SeoSchema from "../components/SeoSchema";
+import NotFound from "../components/layout/PathNotFound";
 
 const CouplePage = () => {
   const { slug } = useParams();
@@ -45,6 +46,10 @@ const CouplePage = () => {
       document.body.style.overflow = "unset";
     };
   }, [lightboxIndex]);
+
+  if (!couple) {
+    return <NotFound />;
+  }
 
   return (
     <div>

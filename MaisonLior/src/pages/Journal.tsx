@@ -20,7 +20,7 @@ const Journal = () => {
       </Helmet>
       {/* header */}
       <section className="pt-40 pb-16 bg-ivory">
-        <FadeInUp 
+        <FadeInUp
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div style={{ opacity: 1, transform: "none" }}>
@@ -40,13 +40,13 @@ const Journal = () => {
 
       {/* horizantal journal */}
       <section className="bg-ivory pb-24">
-        <FadeInUp 
+        <FadeInUp
           className="mx-auto max-w-[1400px] px-6 lg:px-12"
         >
           <div style={{ opacity: 1, transform: "none" }}>
             <Link
               className="group grid lg:grid-cols-2 gap-10 border-t border-border pt-12"
-              to="/journal/0000"
+              to="/journal/the-quiet-luxury-of-restraint"
             >
               <div className="aspect-[4/3] image-zoom overflow-hidden">
                 <img
@@ -97,11 +97,11 @@ const Journal = () => {
 
       {/* grid journals */}
       <section className="bg-ivory py-24 ">
-        <FadeInUp 
+        <FadeInUp
           className="mx-auto max-w-[1400px] px-6 lg:px-12 grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-16"
         >
           {journals.slice(1).map((journal) => (
-            <FadeInUp 
+            <FadeInUp
               key={journal.id}
               style={{ opacity: 1, transform: "none" }}
             >

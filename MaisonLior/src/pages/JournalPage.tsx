@@ -4,6 +4,7 @@ import FadeInUp from "../components/ui/FadeInUp";
 import LeaveThought from "../components/sections/LeaveThought";
 import { Helmet } from "react-helmet-async";
 import SeoSchema from "../components/SeoSchema";
+import NotFound from "../components/layout/PathNotFound";
 
 
 const JournalPage = () => {
@@ -12,7 +13,7 @@ const JournalPage = () => {
   const journal = journalData.find((item) => item.url === url);
 
   if (!journal) {
-    return <div className="pt-40 text-center">Journal not found</div>;
+    return <NotFound />;
   }
 
   const handleClick = () => {
