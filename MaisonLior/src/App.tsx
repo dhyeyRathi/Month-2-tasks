@@ -5,7 +5,7 @@ import "./index.css";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import NotFound from "./components/layout/PathNotFound";
 import Layout from "./components/layout/Layout";
-
+import SeoSchema from "./components/SeoSchema";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
@@ -26,13 +26,13 @@ function App() {
           <Routes>
             <Route element={<Layout></Layout>}>
               <Route path="/" element={<Home></Home>} />
-              <Route path="/about" element={<About></About>} />
-              <Route path="/services" element={<Services></Services>} />
-              <Route path="/portfolio" element={<Portfolio></Portfolio>} />
-              <Route path="/journal" element={<Journal></Journal>} />
-              <Route path="/contact" element={<Contact></Contact>} />
-              <Route path="/portfolio/:slug" element={<CouplePage />} />
-              <Route path="/journal/:url" element={<JournalPage></JournalPage>} />
+              <Route path="/about" element={ <><SeoSchema type="about" /> <About></About></>} />
+              <Route path="/services" element={<><SeoSchema type="services" /> <Services></Services></>} />
+              <Route path="/portfolio" element={<><SeoSchema type="portfolio" /> <Portfolio></Portfolio></>} />
+              <Route path="/journal" element={<><SeoSchema type="journal" /> <Journal></Journal></>} />
+              <Route path="/contact" element={<><SeoSchema type="contact" /> <Contact></Contact></>} />
+              <Route path="/portfolio/:slug" element={<><SeoSchema type="couple" /> <CouplePage /></>} />
+              <Route path="/journal/:url" element={<><SeoSchema type="journal" /> <JournalPage></JournalPage></>} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
